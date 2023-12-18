@@ -64,6 +64,8 @@ main {
   background-color: var(--red);
   padding: 1em;
   z-index: 10;
+  border-radius: 1em;
+  margin-top: 4.5em;
 }
 
 section.text {
@@ -72,7 +74,8 @@ section.text {
   gap: 1em;
 }
 textarea,
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   background-color: var(--white);
   border: 2px solid var(--blue);
   border-radius: 0.4em;
@@ -80,11 +83,12 @@ input[type="text"] {
   padding: 0.3em 0.4em;
 }
 textarea {
-  resize: vertical;
-  height: 300px;
+  resize: none;
+  height: 250px;
 }
 input[type="text"] {
   font-size: 18px;
+  width: fit-content;
 }
 button.save {
   border: 2px solid var(--white);
@@ -106,17 +110,68 @@ button.save:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .controls {
   border: 2px solid var(--off-white);
+  border-radius: 0.4em;
   font-size: 18px;
-  padding: 0.3em 0.4em;
   margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .for {
   display: inline-block;
+  padding: 0.3em;
+}
+hr {
+  width: 2px;
+  height: 1em;
+  color: var(--off-white);
+}
+
+.for button {
+  background-color: transparent;
+  border: none;
+  padding: 0.2em;
+}
+.for button:hover {
+  background-color: var(--white);
+  border-radius: 0.4em;
+  padding: 0.4em;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+.for button:focus,
+.for button.active {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 0.4em;
+}
+
+.others {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.size {
+  display: flex;
+  flex-direction: column;
+}
+.size label {
+  font-size: 10px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+input[type="number"] {
+  width: fit-content;
 }
 
 input[type="color"] {
