@@ -76,6 +76,9 @@ function alignCenter(e) {
 function alignRight(e) {
   textarea.style.textAlign = "right";
 }
+function alignJustify(e) {
+  textarea.style.textAlign = "justify";
+}
 function upperCase(e) {
   if (textarea.style.textTransform == "uppercase") {
     textarea.style.textTransform = "none";
