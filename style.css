@@ -1,0 +1,133 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #b72522;
+  --blue: #0c3542;
+  --white: #e9e8e4;
+  --off-white: #e1dfd3;
+}
+
+.wave-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  background-color: var(--off-white);
+  position: relative;
+  width: 100%;
+  transform: scale(1, 1);
+}
+.wave-bg::before {
+  content: "";
+  display: block;
+  border-radius: 0 0 50% 100%;
+  position: absolute;
+  width: 50%;
+  height: 10vh;
+  background-color: var(--blue);
+  right: 0%;
+  top: 0%;
+}
+
+.circle {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  width: 4vh;
+  height: 4vh;
+  background-color: var(--red);
+  z-index: 1;
+  top: 0%;
+}
+
+.wave-bg::after {
+  content: "";
+  display: block;
+  border-radius: 0 0 100% 50%;
+  position: absolute;
+  width: 50%;
+  height: 10vh;
+  background-color: var(--blue);
+  left: 0%;
+  top: 0%;
+}
+
+main {
+  background-color: var(--red);
+  padding: 1em;
+  z-index: 10;
+}
+
+section.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+textarea,
+input[type="text"] {
+  background-color: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 0.4em;
+  outline: none;
+  padding: 0.3em 0.4em;
+}
+textarea {
+  resize: vertical;
+  height: 300px;
+}
+input[type="text"] {
+  font-size: 18px;
+}
+button.save {
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  color: var(--blue);
+  font-size: 18px;
+  border-radius: 0.4em;
+  outline: none;
+  padding: 0.3em 0.4em;
+}
+
+button.save:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+}
+
+.save-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  border: 2px solid var(--off-white);
+  font-size: 18px;
+  padding: 0.3em 0.4em;
+  margin-bottom: 1em;
+}
+
+.for {
+  display: inline-block;
+}
+
+input[type="color"] {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 2em;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 1em;
+}
